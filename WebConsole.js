@@ -63,10 +63,8 @@
 
       var parameter = '?grep=' + encodeURIComponent(suite.fullTitle()) + '&' + reporterQueryParameter
       var location = document.location
-      var url = location.origin + location.pathname + parameter
       calls.push(['group', suite, suite.title])
-      calls.push(['groupCollapsed', suite , 'url'])
-      calls.push(['log', suite, url])
+      calls.push(['log', suite])
       calls.push(['groupEnd', suite])
     })
 
@@ -93,7 +91,6 @@
       console.log(stats.passes, ' tests passed')
       console.log(stats.duration / 1000, ' seconds')
       console.log((new Date).toUTCString())
-      console.log('Run all tests ' + location.origin + location.pathname + '?' + reporterQueryParameter)
     })
 
     function logNewCalls() {
