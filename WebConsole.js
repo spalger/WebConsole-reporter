@@ -65,7 +65,6 @@
       var location = document.location
       calls.push(['group', suite, suite.title])
       calls.push(['log', suite])
-      calls.push(['groupEnd', suite])
     })
 
     runner.on('suite end', function(suite) {
